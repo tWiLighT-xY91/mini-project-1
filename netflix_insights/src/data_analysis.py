@@ -6,11 +6,11 @@ from dotenv import load_dotenv#type: ignore
 load_dotenv()
 
 def create_engine_connection():
-    user = os.getenv("DB_USER")
-    password = os.getenv("DB_PASSWORD")
-    host = os.getenv("DB_HOST")
-    port = os.getenv("DB_PORT", "3306")
-    database = os.getenv("DB_NAME")
+    user = os.getenv("MYSQL_ADDON_USER")
+    password = os.getenv("MYSQL_ADDON_PASSWORD")
+    host = os.getenv("MYSQL_ADDON_HOST")
+    port = os.getenv("MYSQL_ADDON_PORT", "3306")
+    database = os.getenv("MYSQL_ADDON_DB")
     connection_str = f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
     engine = create_engine(connection_str)
     return engine
