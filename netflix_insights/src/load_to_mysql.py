@@ -90,10 +90,15 @@ def insert_data(conn, df):
         print(f"❌ Error inserting data: {e}")
 
 if __name__ == '__main__':
-    cleaned_data_path = 'netflix_insights/data/cleaned_netflix_titles.csv'
-    df_cleaned = pd.read_csv(cleaned_data_path, parse_dates=['date_added'])
+    cleaned_csv_path = 'netflix_insights/data/cleaned_netflix_titles.csv'
+    df = pd.read_csv(cleaned_csv_path, parse_dates=['date_added'])
+
+    # Replace NaN with None for MySQL compatibility
+    df = df.where(pd.notnull(df), None)
+
     conn = create_connection()
     if conn:
-        create_table(conn)        # <- ensure table exists
-        insert_data(conn, df_cleaned)
+        create_table(conn)
+        insert_data(conn, df)
         conn.close()
+
