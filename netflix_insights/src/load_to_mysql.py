@@ -90,7 +90,7 @@ def insert_data(conn, df):
         print(f"❌ Error inserting data: {e}")
 
 if __name__ == '__main__':
-    cleaned_data_path = 'data/cleaned_netflix_titles.csv'
+    cleaned_data_path = 'netflix_insights/data/cleaned_netflix_titles.csv'
     df_cleaned = pd.read_csv(cleaned_data_path, parse_dates=['date_added'])
     conn = create_connection()
     if conn:
