@@ -1,14 +1,14 @@
 CREATE TABLE IF NOT EXISTS netflix_titles (
-    show_id VARCHAR(10) PRIMARY KEY,
-    type VARCHAR(10),
-    title TEXT,
-    director TEXT,
-    cast TEXT,
-    country TEXT,
+    show_id VARCHAR(15) PRIMARY KEY,
+    type VARCHAR(20),
+    title VARCHAR(255),
+    director VARCHAR(255),
+    cast VARCHAR(1000),
+    country VARCHAR(255),
     date_added DATE,
     release_year INT,
     rating VARCHAR(10),
     duration VARCHAR(20),
-    listed_in TEXT,
-    description TEXT
-);
+    listed_in VARCHAR(500),
+    description VARCHAR(1000)
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
