@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./netflix_insights/data/netflix_titles.csv~"
+    ]
+}
