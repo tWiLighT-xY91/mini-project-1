@@ -1,6 +1,6 @@
 import pandas as pd
 
-def clean_netflix_data(input_path='data/netflix_titles.csv', output_path='data/cleaned_netflix_titles.csv'):
+def clean_netflix_data(input_path='data/netflix_titles.csv~', output_path='data/cleaned_netflix_titles.csv'):
     # Load the dataset
     df = pd.read_csv(input_path)
     
