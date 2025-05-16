@@ -5,10 +5,10 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-from src.data_analysis import (
+from netflix_insights.src.data_analysis import (
     create_engine_connection, get_top_genres, get_shows_per_country,
     get_top_directors, get_yearly_trend, get_type_distribution
-)#type: ignore
+)
 
 app = Flask(__name__)
 engine = create_engine_connection()
